@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b1b">
+  <title>HASSAN SAJID DIGITAL MAGIC PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Hassan Sajid Digital Magic home">
+        <span class="brand-mark">✦</span>
+        <span><b>HASSAN SAJID</b><small>DIGITAL MAGIC · PRO MAX</small></span>
+      </a>
+      <button id="menuBtn" class="icon-btn" aria-label="Toggle dashboard">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="live-dot"></span> CREATIVE PARTICLE STUDIO</div>
+        <h1>Make your own <span>digital magic.</span></h1>
+        <p>Touch the canvas, create glowing trails, turn your name into particles, and save your artwork.</p>
+        <div class="hero-actions">
+          <button id="startBtn" class="primary-btn">✦ Start creating</button>
+          <button id="howBtn" class="secondary-btn">How to use</button>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard">
+        <div class="section-heading">
+          <div><span class="eyebrow">YOUR CONTROL ROOM</span><h2>Magic dashboard</h2></div>
+          <span class="status-pill"><span class="live-dot"></span> READY</span>
+        </div>
+
+        <div class="workspace">
+          <div class="canvas-panel panel">
+            <div class="panel-heading">
+              <div><span class="mini-label">LIVE CANVAS</span><h3>Particle playground</h3></div>
+              <button id="clearBtn" class="small-btn">Clear ↺</button>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="magicCanvas" aria-label="Interactive magic canvas"></canvas>
+              <div id="canvasHint" class="canvas-hint">Touch or drag here to create magic ✨</div>
+              <div id="photoLayer" class="photo-layer" hidden><img id="uploadedPhoto" alt="Uploaded photo for magic effects"></div>
+            </div>
+            <div class="canvas-footer">
+              <span><i class="legend-dot"></i> Touch-responsive particles</span>
+              <button id="saveBtn" class="small-btn">↓ Save PNG</button>
+            </div>
+          </div>
+
+          <aside class="controls panel">
+            <div class="panel-heading"><div><span class="mini-label">CUSTOMIZE</span><h3>Magic controls</h3></div></div>
+            <label class="field-label" for="modeSelect">Effect mode</label>
+            <select id="modeSelect">
+              <option value="nebula">Nebula glow</option>
+              <option value="orbit">Orbit rings</option>
+              <option value="spark">Spark burst</option>
+              <option value="vortex">Vortex swirl</option>
+              <option value="firefly">Firefly field</option>
+              <option value="space3d">3D space stars</option>
+            </select>
+
+            <label class="field-label" for="colorPicker">Magic color</label>
+            <div class="color-row"><input id="colorPicker" type="color" value="#48d9ff"><div class="swatches">
+              <button class="swatch active" data-color="#48d9ff" style="--swatch:#48d9ff" aria-label="Cyan"></button>
+              <button class="swatch" data-color="#a66bff" style="--swatch:#a66bff" aria-label="Purple"></button>
+              <button class="swatch" data-color="#ff4fb8" style="--swatch:#ff4fb8" aria-label="Pink"></button>
+              <button class="swatch" data-color="#7cff8b" style="--swatch:#7cff8b" aria-label="Green"></button>
+              <button class="swatch" data-color="#ffd166" style="--swatch:#ffd166" aria-label="Gold"></button>
+            </div></div>
+
+            <div class="range-heading"><label class="field-label" for="powerRange">Effect intensity</label><output id="powerValue">65%</output></div>
+            <input id="powerRange" type="range" min="15" max="100" value="65">
+
+            <label class="field-label" for="nameInput">Name magic</label>
+            <div class="inline-input"><input id="nameInput" type="text" maxlength="28" placeholder="HASSAN SAJID"><button id="nameBtn" class="small-btn">Create</button></div>
+
+            <div class="control-grid">
+              <button id="autoBtn" class="control-tile"><span>⟳</span><b>Auto magic</b><small>Off</small></button>
+              <button id="soundBtn" class="control-tile"><span>♫</span><b>Sound</b><small>Off</small></button>
+              <button id="photoBtn" class="control-tile"><span>▧</span><b>Photo magic</b><small>Upload</small></button>
+              <button id="secretBtn" class="control-tile"><span>⌑</span><b>Secret mode</b><small>Locked</small></button>
+            </div>
+            <input id="photoInput" type="file" accept="image/*" hidden>
+            <button id="removePhotoBtn" class="text-btn" hidden>Remove uploaded photo</button>
+            <p class="fine-print">Tip: use your finger or mouse on the canvas. Save creates a PNG snapshot of the artwork.</p>
+          </aside>
+        </div>
+
+        <section class="feature-grid" aria-label="Features">
+          <article class="feature-card"><span>✧</span><h3>Advanced effects</h3><p>Glowing particles, trails, and several visual styles.</p></article>
+          <article class="feature-card"><span>⌁</span><h3>Name magic</h3><p>Render a custom name as a luminous particle pattern.</p></article>
+          <article class="feature-card"><span>◎</span><h3>3D-style space</h3><p>Animated stars create a sense of depth and movement.</p></article>
+          <article class="feature-card"><span>⇧</span><h3>Save & share</h3><p>Export your canvas as a PNG image to share.</p></article>
+        </section>
+      </section>
+    </main>
+
+    <footer><span>© <span id="year"></span> HASSAN SAJID DIGITAL MAGIC</span><span>Made by Hassan Sajid✦</span></footer>
+  </div>
+
+  <dialog id="helpDialog" class="modal">
+    <form method="dialog" class="modal-card">
+      <button class="modal-close" aria-label="Close">×</button>
+      <span class="eyebrow">QUICK GUIDE</span><h2>How to create magic</h2>
+      <ol><li>Choose an effect mode and color.</li><li>Touch and drag on the canvas to draw glowing particles.</li><li>Enter your name and tap <b>Create</b> to make name magic.</li><li>Use Photo Magic to add a photo, or Save PNG to export your artwork.</li><li>Secret Mode is a local screen lock for this demo, not strong security.</li></ol>
+      <button class="primary-btn full-btn">Got it</button>
+    </form>
+  </dialog>
+
+  <dialog id="secretDialog" class="modal">
+    <form id="secretForm" class="modal-card">
+      <button type="button" id="secretClose" class="modal-close" aria-label="Close">×</button>
+      <span class="eyebrow">PRIVATE CANVAS</span><h2 id="secretTitle">Set secret passcode</h2>
+      <p id="secretDescription">Choose a 4–12 character passcode for this browser session.</p>
+      <input id="secretCode" type="password" minlength="4" maxlength="12" placeholder="Enter passcode" autocomplete="off" required>
+      <p id="secretMessage" class="secret-message" aria-live="polite"></p>
+      <button id="secretSubmit" class="primary-btn full-btn" type="submit">Set passcode</button>
+      <p class="fine-print">Demo only: this lock is client-side and can be bypassed by someone who can inspect the page or clear browser data.</p>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
